@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Help Center | Designs.ai</title>
+<meta name="description" content="Guides, AI agent examples and troubleshooting for Designs.ai.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar" id="topbar">
+  <div class="wrap topbar-in">
+    <a class="brand" href="#/" aria-label="Designs.ai Help Center home">
+      <img src="assets/logo.svg" alt="Designs.ai" class="brand-logo">
+      <span class="brand-sep"></span><span class="brand-label">Help Center</span>
+    </a>
+    <div class="top-search" id="topSearchWrap" hidden>
+      <div class="search search-sm" data-search>
+        <svg class="i" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input type="search" placeholder="Search help" aria-label="Search help articles" autocomplete="off">
+        <div class="suggest" role="listbox"></div>
+      </div>
+    </div>
+    <nav class="topnav" id="topnav">
+      <a href="#/agents" data-nav="agents">AI Agents guide</a>
+      <a href="#/category/studio" data-nav="studio">Studio &amp; Boards</a>
+      <a href="#/category/troubleshooting" data-nav="troubleshooting">Troubleshooting</a>
+      <button class="btn btn-ghost" data-contact>Contact support</button>
+      <a class="btn btn-primary" href="https://designs.ai" target="_blank" rel="noopener">Go to Designs.ai</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+      <svg class="i" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+<main id="main" tabindex="-1"></main>
+<footer class="footer">
+  <div class="wrap footer-in">
+    <div>
+      <img src="assets/logo.svg" alt="Designs.ai" class="footer-logo">
+      <p class="muted">Your AI creative team, on demand.</p>
+    </div>
+    <div class="footer-cols">
+      <div><h4>Help</h4><a href="#/category/getting-started">Getting started</a><a href="#/category/account">Account &amp; sign-in</a><a href="#/category/credits">Credits &amp; billing</a></div>
+      <div><h4>Product</h4><a href="#/agents">AI Agents guide</a><a href="#/category/studio">Studio &amp; Boards</a><a href="#/category/troubleshooting">Troubleshooting</a></div>
+      <div><h4>Support</h4><a href="#" data-contact>Contact support</a><a href="https://designs.ai" target="_blank" rel="noopener">designs.ai</a></div>
+    </div>
+  </div>
+  <div class="wrap footer-base muted">Prototype for review. Content marked <span class="badge badge-draft">Draft copy</span> needs sign-off.</div>
+</footer>
+
+<div class="modal" id="contactModal" role="dialog" aria-modal="true" aria-labelledby="contactTitle" hidden>
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-card">
+    <button class="icon-btn modal-x" data-close aria-label="Close"><svg class="i" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <form id="contactForm" novalidate>
+      <h2 id="contactTitle">Contact support</h2>
+      <p class="muted">Tell us what happened. We'll reply by email.</p>
+      <div class="field-row">
+        <label class="field"><span>Name</span><input name="name" required autocomplete="name"></label>
+        <label class="field"><span>Email</span><input name="email" type="email" required autocomplete="email" placeholder="you@company.com"></label>
+      </div>
+      <label class="field"><span>Topic</span>
+        <select name="topic" required>
+          <option value="">Choose a topic</option>
+          <option>Account &amp; sign-in</option><option>Credits &amp; billing</option><option>Studio &amp; Boards</option>
+          <option>AI Agents</option><option>Bug or error message</option><option>Something else</option>
+        </select></label>
+      <label class="field"><span>What happened?</span><textarea name="message" rows="5" required placeholder="Include the board or agent name, what you clicked and any message you saw."></textarea></label>
+      <label class="field file"><span>Screenshot (optional)</span><input type="file" name="file" accept="image/*"></label>
+      <div class="form-actions">
+        <button type="button" class="btn btn-ghost" data-close>Cancel</button>
+        <button type="submit" class="btn btn-primary">Send message</button>
+      </div>
+      <p class="tiny muted">Prototype: nothing is actually sent.</p>
+    </form>
+    <div class="sent" id="contactSent" hidden>
+      <div class="sent-ic"><svg class="i" viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg></div>
+      <h2>Message sent</h2>
+      <p class="muted">Thanks, we've got it. We'll reply to <b id="sentEmail"></b>.</p>
+      <button class="btn btn-primary" data-close>Done</button>
+    </div>
+  </div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="js/agents-data.js"></script>
+<script src="js/articles.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
